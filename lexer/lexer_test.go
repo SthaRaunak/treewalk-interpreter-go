@@ -8,20 +8,20 @@ import (
 
 func TestNextToken(t *testing.T) {
 
-	input := `let five = 5;
-	let ten = 10;
+	input := `rakha five = 5;
+	rakha ten = 10;
 
-	let add = fn(x,y) {
+	rakha add = karya(x,y) {
 	x+y;
 	};
-	let result = add(five,ten);
+	rakha result = add(five,ten);
 	!-/*5;
 	5 < 10 > 5;
 
-	if (5 < 10){
-		return true;
-	} else {
-		return false;
+	yedi (5 < 10){
+		firta true;
+	} natra {
+		firta false;
 	}
 
 	10 == 10;
@@ -32,20 +32,20 @@ func TestNextToken(t *testing.T) {
 		expectedType    token.TokenType
 		expectedLiteral string
 	}{
-		{token.LET, "let"},
+		{token.LET, "rakha"},
 		{token.IDENT, "five"},
 		{token.ASSIGN, "="},
 		{token.INT, "5"},
 		{token.SEMICOLON, ";"},
-		{token.LET, "let"},
+		{token.LET, "rakha"},
 		{token.IDENT, "ten"},
 		{token.ASSIGN, "="},
 		{token.INT, "10"},
 		{token.SEMICOLON, ";"},
-		{token.LET, "let"},
+		{token.LET, "rakha"},
 		{token.IDENT, "add"},
 		{token.ASSIGN, "="},
-		{token.FUNCTION, "fn"},
+		{token.FUNCTION, "karya"},
 		{token.LPAREN, "("},
 		{token.IDENT, "x"},
 		{token.COMMA, ","},
@@ -58,7 +58,7 @@ func TestNextToken(t *testing.T) {
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
 		{token.SEMICOLON, ";"},
-		{token.LET, "let"},
+		{token.LET, "rakha"},
 		{token.IDENT, "result"},
 		{token.ASSIGN, "="},
 		{token.IDENT, "add"},
@@ -80,20 +80,20 @@ func TestNextToken(t *testing.T) {
 		{token.GT, ">"},
 		{token.INT, "5"},
 		{token.SEMICOLON, ";"},
-		{token.IF, "if"},
+		{token.IF, "yedi"},
 		{token.LPAREN, "("},
 		{token.INT, "5"},
 		{token.LT, "<"},
 		{token.INT, "10"},
 		{token.RPAREN, ")"},
 		{token.LBRACE, "{"},
-		{token.RETURN, "return"},
+		{token.RETURN, "firta"},
 		{token.TRUE, "true"},
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
-		{token.ELSE, "else"},
+		{token.ELSE, "natra"},
 		{token.LBRACE, "{"},
-		{token.RETURN, "return"},
+		{token.RETURN, "firta"},
 		{token.FALSE, "false"},
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
